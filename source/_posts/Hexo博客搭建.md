@@ -1,7 +1,9 @@
+---
 title: Hexo博客搭建
 author: John Doe
 tags:
   - Hexo
+abbrlink: b8f4bd70
 date: 2020-09-08 12:08:41
 ---
 # 什么是 Hexo？
@@ -140,11 +142,9 @@ http://localhost:4000/
 hexo的个人博客名称（也是自己以后访问使用的域名）.github.io
 
 注册好了后，登录Github,创建仓库：点击右上角的+号，选择new repository:
-![](/images/pasted-0.png)
+{% asset_img pasted-0.png %}
 
-
-![](:mages/pasted-1.png)
-
+{% asset_img pasted-1.png %}
 
 
 切换到自己的服务器中，在~目录下执行
@@ -210,7 +210,7 @@ hexo generate
 hexo deploy
 ```
 
-# 安装hexo-admin后台
+# 安装hexo-admin后台 (不推荐，图片处理有些问题)
 首先进入hexo创建的博客项目的根目录下，执行
 
 ```

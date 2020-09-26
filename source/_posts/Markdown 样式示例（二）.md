@@ -1,7 +1,10 @@
+---
 title: Markdown 样式示例（二）
 author: John Doe
 tags:
+  - Hexo
   - Markdown
+abbrlink: f0d30e2c
 date: 2020-09-09 11:25:19
 ---
 参考地址：

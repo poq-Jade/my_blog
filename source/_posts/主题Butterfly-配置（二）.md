@@ -1,10 +1,30 @@
-# Main menu navigation (導航目錄)
+---
+title: 主题Butterfly-配置（二）
+abbrlink: c9da083e
+date: 2020-09-18 09:17:41
+tags:
+  - Hexo
+  - Butterfly
+---
+
+> Butterfly配置
+
+Butterfly配置文件`_config.butterfly.yml`
+```YAML
+# Main menu navigation (导航菜单)
 # --------------------------------------
 
+# 格式: 名称: 链接 || 图标
+# 子菜单
+# 名称 || 图标:
+#   名称 || 链接 || 图标
+# ---------------------------
 # format: name: link || icon
 # sub-menu
 # name || icon:
 #   name || link || icon
+# Main menu navigation (導航目錄)
+# --------------------------------------
 
 menu:
   主页: / || fas fa-home
@@ -15,7 +35,7 @@ menu:
     - Music || /music/ || fas fa-music
     - Movie || /movies/ || fas fa-video
   链接: /link/ || fas fa-link
-  # 关于: /about/ || fas fa-heart
+  关于: /about/ || fas fa-heart
 
 # Hide the child menu items in mobile sidebar   -- 没试出来
 hide_sidebar_menu_child: false
@@ -58,7 +78,7 @@ algolia_search:
     hits_empty: "We didn't find any results for the search: ${query}" # if there are no result
     hits_stats: '${hits} results found in ${time} ms'
 
-# Local search
+# Local search  (本地搜索)
 local_search:
   enable: true
   labels:
@@ -160,7 +180,7 @@ wordcount:
   min2read: true
   total_wordcount: true
 
-# Display the article introduction on homepage
+# Display the article introduction on homepage  (主页文章节选)
 # 1: description
 # 2: both (if the description exists, it will show description, or show the auto_excerpt)
 # 3: auto_excerpt (default)
@@ -177,13 +197,14 @@ toc:
   number: true
   auto_open: true # auto open the sidebar
 
+# 文章版权设置
 post_copyright:
   enable: true
   decode: false
   license: CC BY-NC-SA 4.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-# Sponsor/reward
+# Sponsor/reward （打赏）
 reward:
   enable: false
   QR_code:
@@ -194,7 +215,7 @@ reward:
     #   link:
     #   text: alipay
 
-# Related Articles
+# Related Articles （相關文章）
 related_post:
   enable: true
   limit: 6 # Number of posts displayed
@@ -203,7 +224,7 @@ related_post:
 # figcaption (圖片描述文字)
 photofigcaption: false
 
-# anchor
+# anchor （文章錨點）
 # when you scroll in post, the URL will update according to header id.
 anchor: false
 
@@ -211,7 +232,7 @@ anchor: false
 noticeOutdate:
   enable: true
   style: flat # style: simple/flat
-  limit_day: 3 # When will it be shown
+  limit_day: 10 # When will it be shown
   position: top # position: top/bottom
   message_prev: It has been
   message_next: days since the last update, the content of the article may be outdated.
@@ -244,7 +265,7 @@ comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Utterances/Facebook Comments
   use:
-  - Valine
+  # - Valine
   # - Disqus
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -291,8 +312,8 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
-  appId: XMbk2Nj8IujH0ADojq7U5h5N-gzGzoHsz # leancloud application app id
-  appKey: XG55cpCr2jATAHRRNiH4xcm6 # leancloud application app key
+  appId:  # leancloud application app id
+  appKey:  # leancloud application app key
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   lang: en # i18n: zh-CN/zh-TW/en/ja
@@ -324,7 +345,7 @@ facebook_comments:
   order_by: social # social/time/reverse_time
   lang: en_US # Language en_US/zh_CN/zh_TW and so on
 
-# Chat Services
+# Chat Services (聊天服务)
 # --------------------------------------
 
 # Chat Button [recommend]
@@ -349,8 +370,8 @@ tidio:
 # daovoice
 # http://daovoice.io/
 daovoice:
-  enable: true
-  app_id: 5e3b80ca
+  enable: false
+  app_id: 
 
 # gitter
 # https://gitter.im/
@@ -364,21 +385,21 @@ crisp:
   enable: false
   website_id:
 
-# Footer Settings
+# Footer Settings   (页脚设置)
 # --------------------------------------
 footer:
-  owner:
+  owner:              # 博客年份
     enable: true
     since: 2020
-  custom_text:
+  custom_text:        # 页脚自定义文本
   copyright: true # Copyright of theme and framework
-  ICP: # Chinese ICP License
+  ICP:                # 网站备案信息
     enable: false
     url:
     text:
     icon: /img/icp.png
 
-# Analysis
+# Analysis  (分析统计)
 # --------------------------------------
 
 # Baidu Analytics
@@ -397,7 +418,7 @@ tencent_analytics:
 # https://www.umeng.com/
 cnzz_analytics:
 
-# Advertisement
+# Advertisement (广告)
 # --------------------------------------
 
 # Google Adsense (谷歌廣告)
@@ -902,3 +923,6 @@ CDN:
   prismjs_js: https://cdn.jsdelivr.net/npm/prismjs/prism.min.js
   prismjs_lineNumber_js: https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
   prismjs_autoloader: https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+
+
+```

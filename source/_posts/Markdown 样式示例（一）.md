@@ -1,8 +1,11 @@
+---
 title: Markdown 样式示例（一）
 author: John Doe
-date: 2020-09-08 17:05:22
 tags:
-	- Markdown
+  - Hexo
+  - Markdown
+abbrlink: c0c5e2f4
+date: 2020-09-08 17:05:22
 ---
 参考地址：
 [Markdown](https://www.w3cschool.cn/markdownyfsm/markdownyfsm-markdownjmyf.html)

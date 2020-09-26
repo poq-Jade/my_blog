@@ -3,22 +3,33 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 平淡且平凡
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: 平淡且平凡
 language: zh-CN
 timezone: ''
+email: 1043643347@qq.com
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-#url: http://example.com
-#root: /
+# 网址
+url: http://example.com
+# 网站根目录
+root: /
 #url: https://poq-jade.github.io/hexo.github.io/
 #root: /hexo.github.io
-permalink: :year/:month/:day/:title/
+
+# 文章的 永久链接 格式
+#permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
+abbrlink:
+  alg: crc32   #算法： crc16(default) and crc32
+  rep: hex     #进制： dec(default) and hex
+
+# 永久链接中各部分的默认值
 permalink_defaults:
+
+# 改写 permalink 的值来美化 URL
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -44,6 +55,9 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
@@ -72,6 +86,7 @@ index_generator:
 default_category: uncategorized
 category_map:
 tag_map:
+  Hexo: hext
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
@@ -108,3 +123,22 @@ deploy:
   type: git
   repo: git@github.com:poq-Jade/hexo.github.io.git
   branch: master
+
+plugins:
+  - hexo-algoliasearch
+
+algolia:
+  appId: "WF9G8S8T0C"
+  apiKey: "17a77eaf2dff50d588c80b726cd9764b"
+  adminApiKey: "3368ac376631c0bb504b0a1d031f505b"
+  chunkSize: 5000
+  indexName: "my-hexo-blog"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title

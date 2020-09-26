@@ -6,3 +6,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+config.yml
+_config.butterfly.yml
+_admin-config.yml
